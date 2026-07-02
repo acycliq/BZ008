@@ -618,7 +618,7 @@ function rebuildComboMap(meta) {
 
 // Poll metadata while the grid is still computing so combos light up live
 function startGridPolling() {
-    const TOTAL = 512;
+    const TOTAL = 1536;
     const timer = setInterval(async () => {
         try {
             const m = await loadJSON(`${DATA()}/runs_metadata.json?_=` + Date.now());
@@ -643,7 +643,7 @@ async function applyCombo() {
 
     const selectedRunIdEl = document.getElementById('selectedRunId');
     const selectedRunDisplayEl = document.getElementById('selectedRunDisplay');
-    if (selectedRunIdEl) selectedRunIdEl.textContent = runId ? `${state.seg} / ${runId}` : `not computed (${state.gridDone || 0}/512 done)`;
+    if (selectedRunIdEl) selectedRunIdEl.textContent = runId ? `${state.seg} / ${runId}` : `not computed (${state.gridDone || 0}/1536 done)`;
     if (selectedRunDisplayEl) selectedRunDisplayEl.classList.remove('hidden');
 
     if (!runId) {
