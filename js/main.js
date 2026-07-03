@@ -618,7 +618,7 @@ function rebuildComboMap(meta) {
 
 // Poll metadata while the grid is still computing so combos light up live
 function startGridPolling() {
-    const TOTAL = 1536;
+    const TOTAL = 1792;
     const timer = setInterval(async () => {
         try {
             const m = await loadJSON(`${DATA()}/runs_metadata.json?_=` + Date.now());
